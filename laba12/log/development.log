@@ -1,0 +1,2757 @@
+Started GET "/" for ::1 at 2022-12-12 20:58:02 +0300
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221201090149_create_users.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20221201090149)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221201090149"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-12 17:58:17.658872"], ["updated_at", "2022-12-12 17:58:17.658872"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-12-12 20:58:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 20:58:24 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:01:50 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:01:51 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:01:52 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:24 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:25 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:25 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:26 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:27 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:02:39 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.9ms | Allocations: 6329)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:02:39 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 10.6ms | Allocations: 7640)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 142.0ms | Allocations: 68070)
+Completed 200 OK in 145ms (Views: 143.8ms | ActiveRecord: 0.0ms | Allocations: 69158)
+
+
+Started POST "/session/create" for ::1 at 2022-12-12 21:02:45 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"g", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "g"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:16:in `create'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 2512)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:02:45 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2300)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4259)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4552)
+
+
+Started GET "/users/new" for ::1 at 2022-12-12 21:02:46 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 10.3ms | Allocations: 3275)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3640)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5689)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 10457)
+
+
+Started POST "/users" for ::1 at 2022-12-12 21:02:51 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"negr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "negr"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "negr"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-12 18:02:52.188390"], ["updated_at", "2022-12-12 18:02:52.188390"]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 252ms (ActiveRecord: 7.6ms | Allocations: 5682)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:02:52 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3584)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 6202)
+
+
+Started GET "/index/output?inpt=45&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:02:55 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"inpt"=>"45", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.5ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2244)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 3972)
+
+
+Started GET "/index/input" for ::1 at 2022-12-12 21:02:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/index/input"):
+  
+Started GET "/" for ::1 at 2022-12-12 21:04:23 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3633)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5776)
+
+
+Started GET "/index/output?inpt=44&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:04:25 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"inpt"=>"44", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 1.1ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2198)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 3865)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:04:27 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.3ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2800)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 4292)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:04:28 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1317)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3376)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 5261)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:04:32 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2816)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 4398)
+
+
+Started GET "/index/output?inpt=5&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:04:45 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"inpt"=>"5", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2009)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 3512)
+
+
+Started GET "/index/output?inpt=5&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:05:04 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"inpt"=>"5", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 1.1ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2718)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4806)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:05:05 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3088)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4729)
+
+
+Started GET "/index/output?v1=15&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:05:09 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"15", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3955)
+
+
+  
+NameError (uninitialized constant IndexController::Prime
+
+      if Prime.prime?(i) == true
+         ^^^^^):
+  
+app/controllers/index_controller.rb:16:in `block in output'
+app/controllers/index_controller.rb:15:in `output'
+Started GET "/index/output?v1=15&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:06:45 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"15", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3851)
+
+
+  
+NameError (uninitialized constant IndexController::Prime
+
+      if Prime.prime?(i) == true
+         ^^^^^):
+  
+app/controllers/index_controller.rb:16:in `block in output'
+app/controllers/index_controller.rb:15:in `output'
+Started GET "/" for ::1 at 2022-12-12 21:06:49 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 4.7ms | Allocations: 5533)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 5621)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms | Allocations: 7599)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x000000000155e0>
+Did you mean?  for
+               fork):
+    4:  <%= label_tag("Значение:") %>
+    5:  <%= number_field_tag(:v1) %> <br/>
+    6:  <br/>
+    7: <%= form.submit "Отправить", id: 'submit-btn' %>
+    8: <% end %> 
+    9: <% unless flash[:error].nil? %>
+   10: <p> <%= flash[:error] %> </p>  
+  
+app/views/index/input.html.erb:7
+app/views/index/input.html.erb:3
+Started GET "/" for ::1 at 2022-12-12 21:07:36 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1261)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1350)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3471)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Числа Мерсена</h1>
+<p>Введите число</p>
+<%= form_tag("/index/output", :method => "get") do %>
+ <%= label_tag("Значение:") %>
+ <%= number_field_tag(:v1) %> <br/>
+ <br/>
+ <%= submit_tag("Получить результат"), id: 'submit-btn' %>
+<% end %> 
+<% unless flash[:error].nil? %>
+<p> <%= flash[:error] %> </p>  
+<% end %>
+<%=link_to 'Выйти из учетной записи', session_logout_path%>
+<%=link_to 'Просмотреть базу с пользователями', :users%>
+
+):
+1:    <h1>Числа Мерсена</h1>
+2:    <p>Введите число</p>
+3:    <%= form_tag("/index/output", :method => "get") do %>
+4:     <%= label_tag("Значение:") %>
+5:     <%= number_field_tag(:v1) %> <br/>
+6:     <br/>
+7:     <%= submit_tag("Получить результат"), id: 'submit-btn' %>
+8:    <% end %> 
+9:    <% unless flash[:error].nil? %>
+10:    <p> <%= flash[:error] %> </p>  
+11:    <% end %>
+12:    <%=link_to 'Выйти из учетной записи', session_logout_path%>
+13:    <%=link_to 'Просмотреть базу с пользователями', :users%>
+  
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/index/input.html.erb:7: syntax error, unexpected ',', expecting ')'
+Started GET "/" for ::1 at 2022-12-12 21:08:30 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1138)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3542)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5687)
+
+
+Started GET "/index/output?v1=666&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:08:32 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"666", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3967)
+
+
+  
+NameError (uninitialized constant IndexController::Prime
+
+      if Prime.prime?(i) == true
+         ^^^^^):
+  
+app/controllers/index_controller.rb:16:in `block in output'
+app/controllers/index_controller.rb:15:in `output'
+Started GET "/index/output?v1=666&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:09:37 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"666", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3851)
+
+
+  
+NameError (uninitialized constant IndexController::Prime
+
+      if Prime.prime?(i) == true
+         ^^^^^):
+  
+app/controllers/index_controller.rb:16:in `block in output'
+app/controllers/index_controller.rb:15:in `output'
+Started GET "/" for ::1 at 2022-12-12 21:09:41 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 799)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3060)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 5079)
+
+
+Started GET "/index/output?v1=20&commit=%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82" for ::1 at 2022-12-12 21:09:44 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"20", "commit"=>"Получить результат"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 3961)
+
+
+  
+NameError (uninitialized constant IndexController::Prime
+
+      if Prime.prime?(i) == true
+         ^^^^^):
+  
+app/controllers/index_controller.rb:16:in `block in output'
+app/controllers/index_controller.rb:15:in `output'
+Started GET "/" for ::1 at 2022-12-12 21:11:01 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:11:02 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:3:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:11:09 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1310)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 17587)
+Completed 200 OK in 39ms (Views: 25.2ms | ActiveRecord: 1.6ms | Allocations: 23309)
+
+
+Started GET "/index/output?inpt=15&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:11:12 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"inpt"=>"15", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3095)
+
+
+  
+NoMethodError (undefined method `prime?' for 15:Integer
+
+    primes = (n..2 * n).to_a.select(&:prime?)
+                            ^^^^^^^):
+  
+app/controllers/index_controller.rb:28:in `select'
+app/controllers/index_controller.rb:28:in `twins'
+app/controllers/index_controller.rb:17:in `output'
+Started GET "/index/output?inpt=15&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:13:41 +0300
+  
+SyntaxError (/home/yultylight/StudRep-master/12/lab12/app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for ::1 at 2022-12-12 21:13:46 +0300
+  
+SyntaxError (/home/yultylight/StudRep-master/12/lab12/app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+app/controllers/index_controller.rb:36: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for ::1 at 2022-12-12 21:13:58 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:2:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:13:59 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:2:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:14:45 +0300
+  
+LoadError (cannot load such file -- prime):
+  
+app/controllers/index_controller.rb:2:in `<main>'
+Started GET "/" for ::1 at 2022-12-12 21:15:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2031)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 31055)
+Completed 200 OK in 51ms (Views: 37.1ms | ActiveRecord: 0.7ms | Allocations: 43297)
+
+
+Started GET "/index/output?v1=17&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:15:32 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"17", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2909)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3003)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 4812)
+
+
+  
+ActionView::Template::Error (undefined method `*' for nil:NilClass):
+    4: 
+    5: <%unless @result.nil?%>
+    6: 
+    7: <h2>Простые числа в диапазоне от <%="#{@input} до #{@input * 2}"%></h2>
+    8: <table>
+    9:     <tr>
+   10:       <td colspan = 2 >Соседние числа</td>
+  
+app/views/index/output.html.erb:7
+Started GET "/index/output?v1=17&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:16:14 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"17", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.5ms | Allocations: 301)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2700)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 4925)
+
+
+Started GET "/index/input" for ::1 at 2022-12-12 21:16:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/index/input"):
+  
+Started GET "/index/input" for ::1 at 2022-12-12 21:16:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/index/input"):
+  
+Started GET "/" for ::1 at 2022-12-12 21:16:32 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1374)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3636)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5758)
+
+
+Started GET "/index/output?v1=13&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:16:36 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"13", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.6ms | Allocations: 250)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2206)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3905)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:16:37 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.6ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2801)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4294)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:16:38 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3445)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 5642)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:16:39 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2816)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 4370)
+
+
+Started GET "/index/output?v1=1&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:16:41 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"1", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1999)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 3492)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:16:42 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.1ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2801)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 4276)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:16:43 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 795)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2656)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4148)
+
+
+Started GET "/users/new" for ::1 at 2022-12-12 21:16:45 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 30.4ms | Allocations: 3947)
+  Rendered users/new.html.erb within layouts/application (Duration: 31.6ms | Allocations: 4253)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 6224)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms | Allocations: 6617)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-12 21:16:46 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1830)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:16:46 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2755)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4809)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 5508)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-12 21:23:49 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1887)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:23:49 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2231)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4096)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4362)
+
+
+Started GET "/users/new" for ::1 at 2022-12-12 21:23:54 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 1853)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1945)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3810)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4081)
+
+
+Started POST "/users" for ::1 at 2022-12-12 21:23:59 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ee", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ee"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "ee"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-12 18:23:59.470531"], ["updated_at", "2022-12-12 18:23:59.470531"]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 244ms (ActiveRecord: 7.8ms | Allocations: 5754)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:23:59 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.8ms | Allocations: 996)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2963)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 4548)
+
+
+Started GET "/index/output?v1=23&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:24:03 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"23", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.1ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2011)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 3521)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:24:51 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.9ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2804)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4303)
+
+
+Started GET "/index/output?v1=600&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:24:56 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"600", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.4ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2019)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 3592)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:25:21 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.6ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2804)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 4303)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:28:13 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.3ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2804)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 4297)
+
+
+Started GET "/index/output?v1=600&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:28:15 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"600", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.3ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2019)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 3592)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:29:54 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 0.7ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2804)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 4285)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:35:01 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1371)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3625)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 5684)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:37:02 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1385)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6299)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 8442)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-12 21:37:05 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1546)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:37:05 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2702)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4748)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 5375)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:37:18 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1696)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:37:18 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2719)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4956)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 5798)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:37:20 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2210)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4071)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 4342)
+
+
+Started POST "/session/create" for ::1 at 2022-12-12 21:37:25 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"ee", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ee"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 195ms (ActiveRecord: 0.2ms | Allocations: 2101)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:37:25 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3457)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5317)
+
+
+Started GET "/index/output?v1=1&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:37:44 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"1", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.7ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2723)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 4894)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:37:45 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1276)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3140)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4774)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:38:47 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1335)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3587)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 5656)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:39:06 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1352)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3604)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5761)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:39:11 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3605)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5747)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:39:27 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1360)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3622)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 5795)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:39:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.3ms | Allocations: 228)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.7ms | Allocations: 7298)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 9269)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.3ms | Allocations: 12011)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 180)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1157)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3382)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 6046)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:16 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 180)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3381)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 6042)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.8ms | Allocations: 180)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 964)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3204)
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 5852)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:33 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2221)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 4292)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2221)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 4167)
+
+
+Started GET "/users/2" for ::1 at 2022-12-12 21:40:38 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 180)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3381)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 5925)
+
+
+Started DELETE "/users/2" for ::1 at 2022-12-12 21:40:49 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 12ms (ActiveRecord: 7.6ms | Allocations: 3771)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:40:49 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1402)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:40:49 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2746)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4794)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5421)
+
+
+Started POST "/session/create" for ::1 at 2022-12-12 21:40:53 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"vv", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vv"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:16:in `create'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1546)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:40:53 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2235)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4098)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4365)
+
+
+Started POST "/session/create" for ::1 at 2022-12-12 21:41:25 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"vv", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vv"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:16:in `create'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1455)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:41:25 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2235)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4098)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 4350)
+
+
+Started GET "/users/new" for ::1 at 2022-12-12 21:41:25 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 2261)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2563)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4426)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started POST "/users" for ::1 at 2022-12-12 21:41:28 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"vv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vv"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "vv"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-12 18:41:29.025165"], ["updated_at", "2022-12-12 18:41:29.025165"]]
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:24:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 7.7ms | Allocations: 4121)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:41:29 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1410)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3471)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5357)
+
+
+Started GET "/index/output?v1=679&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:41:33 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"679", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 1.1ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2230)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3969)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:41:38 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.3ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2824)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4317)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:41:39 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1160)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3023)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 4590)
+
+
+Started GET "/users/1" for ::1 at 2022-12-12 21:41:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2406)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 4371)
+
+
+Started GET "/users/1" for ::1 at 2022-12-12 21:43:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 821)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3050)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5607)
+
+
+Started GET "/users/1" for ::1 at 2022-12-12 21:43:47 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 823)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3052)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 5722)
+
+
+Started GET "/users/1" for ::1 at 2022-12-12 21:43:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 821)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3050)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 5693)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:43:56 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1158)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3022)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 4712)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:44:17 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1355)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3620)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 7.0ms | Allocations: 5693)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:44:31 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1356)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3616)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 5770)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:44:44 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1355)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3610)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 5758)
+
+
+Started GET "/users/1" for ::1 at 2022-12-12 21:44:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 661)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2523)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 4653)
+
+
+Started DELETE "/users/1" for ::1 at 2022-12-12 21:44:46 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:44:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 18ms (ActiveRecord: 9.1ms | Allocations: 3575)
+
+
+Started GET "/users" for ::1 at 2022-12-12 21:44:46 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 836)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2699)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 4215)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:44:52 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1399)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3460)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 5308)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-12 21:44:54 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 1540)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:44:54 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2708)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4756)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 5400)
+
+
+Started POST "/session/create" for ::1 at 2022-12-12 21:45:00 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"vv", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vv"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 333ms (ActiveRecord: 0.2ms | Allocations: 1816)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:45:01 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 970)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2833)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 4329)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:45:28 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3653)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 5715)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:45:42 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.9ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4123)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 5710)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:45:49 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4031)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 5518)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:45:58 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.0ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4034)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 5527)
+
+
+Started GET "/index/output?v1=9&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:46:02 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"9", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 2.1ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2221)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 3810)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:46:03 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2822)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 4309)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:46:16 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.2ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4034)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 5524)
+
+
+Started GET "/index/output?v1=10&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:46:19 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"10", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2018)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 3548)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:46:21 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.5ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2822)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 4324)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:55:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2058)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 36353)
+Completed 200 OK in 78ms (Views: 59.0ms | ActiveRecord: 0.8ms | Allocations: 48598)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-12 21:55:16 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1847)
+
+
+Started GET "/session/login" for ::1 at 2022-12-12 21:55:16 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3714)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5785)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 6491)
+
+
+Started GET "/users/new" for ::1 at 2022-12-12 21:55:34 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.6ms | Allocations: 3044)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3438)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5488)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 6380)
+
+
+Started POST "/users" for ::1 at 2022-12-12 21:56:04 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"Egor", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Egor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Egor"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-12 18:56:04.632528"], ["updated_at", "2022-12-12 18:56:04.632528"]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 359ms (ActiveRecord: 8.3ms | Allocations: 5771)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:56:04 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1017)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2980)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 4543)
+
+
+Started GET "/index/output?v1=500&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-12 21:56:27 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"500", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 1.0ms | Allocations: 299)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2254)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 3928)
+
+
+Started GET "/" for ::1 at 2022-12-12 21:56:33 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.8ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2824)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 4329)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:27:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1963)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 31014)
+Completed 200 OK in 89ms (Views: 63.8ms | ActiveRecord: 1.2ms | Allocations: 42650)
+
+
+Started GET "/index/output?v1=11&commit=%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C" for ::1 at 2022-12-13 11:27:21 +0300
+Processing by IndexController#output as HTML
+  Parameters: {"v1"=>"11", "commit"=>"Отправить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/output.html.erb within layouts/application
+  Rendered index/output.html.erb within layouts/application (Duration: 7.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2436)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 3679)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:27:22 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.9ms | Allocations: 989)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2851)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 3821)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-13 11:27:23 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1298)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:27:23 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3169)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5241)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 5946)
+
+
+Started POST "/session/create" for ::1 at 2022-12-13 11:27:34 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"ee", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ee"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8:in `create'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 1448)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:27:34 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1766)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3726)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4021)
+
+
+Started GET "/users/new" for ::1 at 2022-12-13 11:27:35 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.4ms | Allocations: 2477)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2870)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4919)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 5800)
+
+
+Started POST "/users" for ::1 at 2022-12-13 11:27:42 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"Egor", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Egor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 1791)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3748)
+Completed 422 Unprocessable Entity in 334ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 7549)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-13 11:27:46 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1092)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:27:46 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3550)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+Started POST "/session/create" for ::1 at 2022-12-13 11:27:52 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"Egor", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Egor"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 348ms (ActiveRecord: 0.2ms | Allocations: 1320)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:27:53 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2830)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 3775)
+
+
+Started GET "/users" for ::1 at 2022-12-13 11:27:54 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 42.6ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 3081)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.4ms | Allocations: 4145)
+
+
+Started GET "/users/3" for ::1 at 2022-12-13 11:27:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 661)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2519)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.4ms | Allocations: 4563)
+
+
+Started DELETE "/users/3" for ::1 at 2022-12-13 11:27:57 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 19ms (ActiveRecord: 8.8ms | Allocations: 3124)
+
+
+Started GET "/users" for ::1 at 2022-12-13 11:27:57 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2696)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 3644)
+
+
+Started GET "/users" for ::1 at 2022-12-13 11:28:01 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2689)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 3649)
+
+
+Started GET "/users/4" for ::1 at 2022-12-13 11:32:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 449)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2302)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 3716)
+
+
+Started GET "/users" for ::1 at 2022-12-13 11:32:54 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 2689)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 3634)
+
+
+Started GET "/users/new" for ::1 at 2022-12-13 11:32:55 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.4ms | Allocations: 1324)
+  Rendered users/new.html.erb within layouts/application (Duration: 15.9ms | Allocations: 1423)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 3284)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 3551)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-13 11:32:56 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 897)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:32:56 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 38.6ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 3551)
+Completed 200 OK in 50ms (Views: 49.3ms | ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+Started POST "/session/create" for ::1 at 2022-12-13 11:33:06 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"Egor", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Egor"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 314ms (ActiveRecord: 0.1ms | Allocations: 1121)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:33:07 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2834)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 3765)
+
+
+Started GET "/users" for ::1 at 2022-12-13 11:33:11 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2689)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3643)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-13 11:33:15 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 900)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:33:15 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1682)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3543)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3795)
+
+
+Started GET "/users/new" for ::1 at 2022-12-13 11:33:27 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | Allocations: 1300)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1399)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3260)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3526)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:33:40 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 798)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:33:40 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1517)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3378)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3630)
+
+
+Started GET "/index/input" for ::1 at 2022-12-13 11:34:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/index/input"):
+  
+Started GET "/session/logout" for ::1 at 2022-12-13 11:34:13 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1195)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:34:13 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1794)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 3763)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 4041)
+
+
+Started POST "/session/create" for ::1 at 2022-12-13 11:34:18 +0300
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"Egor", "password"=>"[FILTERED]", "commit"=>"Вход"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Egor"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 349ms (ActiveRecord: 0.2ms | Allocations: 1202)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:34:19 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 1.7ms | Allocations: 970)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2838)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 3779)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:34:30 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 836)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:34:30 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3469)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3721)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:34:44 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 839)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:34:44 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3463)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3715)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:27 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3472)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3724)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms | Allocations: 2693)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 859)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:56 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:57 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:58 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:36:59 +0300
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:21:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 854)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:37:04 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1854)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 17929)
+Completed 200 OK in 23ms (Views: 22.4ms | Allocations: 18611)
+
+
+Started GET "/session/logout" for ::1 at 2022-12-13 11:49:27 +0300
+Processing by SessionController#logout as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:20:in `current_user'
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms | Allocations: 4582)
+
+
+Started GET "/session/login" for ::1 at 2022-12-13 11:49:27 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1917)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 18000)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 18577)
+
+
+Started GET "/users/new" for ::1 at 2022-12-13 11:51:40 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 1562)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3738)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 4472)
+
+
+Started POST "/users" for ::1 at 2022-12-13 11:51:47 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"Igor", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Igor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Igor"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-13 08:51:47.840778"], ["updated_at", "2022-12-13 08:51:47.840778"]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 330ms (ActiveRecord: 8.3ms | Allocations: 4653)
+
+
+Started GET "/" for ::1 at 2022-12-13 11:51:47 +0300
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:20:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering index/input.html.erb within layouts/application
+  Rendered index/input.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1142)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3221)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 4744)
+
+
+Started GET "/" for ::1 at 2022-12-22 22:41:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/session_helper.rb:20:in `current_user'
+Redirected to http://localhost:3000/session/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms | Allocations: 5159)
+
+
+Started GET "/session/login" for ::1 at 2022-12-22 22:41:40 +0300
+Processing by SessionController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3729)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: stimulus.min.js
+Importmap skipped missing path: stimulus-loading.js
+  Rendered layout layouts/application.html.erb (Duration: 96.3ms | Allocations: 32495)
+Completed 200 OK in 103ms (Views: 99.6ms | ActiveRecord: 0.0ms | Allocations: 34721)
+
+
+Started GET "/users/new" for ::1 at 2022-12-22 22:41:43 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.7ms | Allocations: 2526)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2926)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4978)
+Completed 200 OK in 31ms (Views: 14.7ms | ActiveRecord: 0.4ms | Allocations: 9758)
+
+
