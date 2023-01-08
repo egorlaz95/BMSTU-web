@@ -1,0 +1,14 @@
+<h1 class="color-text center">Числа Мерсена</h1>
+<%= form_with url: "/mersen/show", class: "center", 
+id: "mersen_form", 
+local: false,
+method: :post do |form| %>
+<%= form.label :n, class: "center" %>
+<%= form.number_field :n%>
+<%= form.submit "Показать результат", class:"button" %>
+<% end %>
+<div id="result" class="center"></div>
+
+<% unless flash[:error].nil?%>
+    <%= flash[:error] %>
+<% end %>

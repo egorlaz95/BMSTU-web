@@ -1,0 +1,7 @@
+<table border="1">
+<th> Номер </th> <th> Число Мерсена  </th>
+<tr> <%(0..@result.length-1).each do |x| %>
+<td> <%= x + 1 %> </td> <td> <%= @result[x] %> </td>
+</tr>
+<% end %>
+</table>
